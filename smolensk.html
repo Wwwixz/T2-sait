@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смоленская область</title>
+    <link rel="stylesheet" href='css/smolensk.css'>
+</head>
+<body>
+    <header class="header">
+        <h1 class="region-title">Смоленская область</h1>
+    </header>
+
+    <main class="main-content">
+        <section class="section">
+            <h2 class="section-title">Галерея региона</h2>
+            <div class="gallery-container">
+                <button class="gallery-btn gallery-btn-prev" aria-label="Предыдущее фото">‹</button>
+                <button class="gallery-btn gallery-btn-next" aria-label="Следующее фото">›</button>
+                <div class="gallery-counter">1/8</div>
+                <div class="gallery-slide">
+                    <div class="gallery-placeholder">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Традиционные костюмы</h2>
+            <div class="costume-container">
+                <div style="display: flex; padding: 1rem;">
+    <div style="flex: 0 0 200px; height: 250px; overflow: hidden;">
+        <img src="{{ url_for('static', filename='images/smolensk/costumes.jpg') }}"
+             alt="Костюмы"
+             style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+</div>
+                <div class="costume-text">
+                    <h3 class="costume-title">Украсы</h3>
+                    <p class="costume-description">Народный костюм Смоленской губернии – это не просто одежда, а грандиозный памятник материальной и духовной культуры, сформировавшийся на перекрестке русских, белорусских и отчасти балтских традиций. «УКРАСЫ» — так называли на Смоленщине орнамент, украшавший одежду и предметы быта. Эти вышитые или тканые узоры, созданные руками талантливых мастериц, были неотъемлемой частью жизни смоленских крестьян, неся в себе не только эстетическую, но и обережную функцию.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+    <h2 class="section-title">Традиционные блюда</h2>
+    <div class="dishes-container">
+        <article class="dish-card">
+            <div class="dish-image">
+                <img src="{{ url_for('static', filename='images/smolensk/kutuzov.webp') }}"
+                     alt="Кролик Кутузов"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dish-content">
+                <a href="https://eda.rambler.ru/recepty/osnovnye-blyuda/krolik-kutuzov-139758">
+                    <h3 class="dish-title">Кролик «Кутузов»</h3>
+                </a>
+                <p class="dish-description">Тушёный кролик в сметанно-грибном соусе, историческое блюдо Смоленска.</p>
+            </div>
+        </article>
+
+        <article class="dish-card">
+            <div class="dish-image">
+                <img src="{{ url_for('static', filename='images/smolensk/pokacheniki.webp') }}"
+                     alt="Покаченики"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dish-content">
+                <a href="https://eda.rambler.ru/recepty/osnovnye-blyuda/pokacheniki-139754">
+                    <h3 class="dish-title">Покаченики</h3>
+                </a>
+                <p class="dish-description">Постные смоленские котлетки из отварного картофеля в мундире и гречневой крупы.</p>
+            </div>
+        </article>
+
+        <article class="dish-card">
+            <div class="dish-image">
+                <img src="{{ url_for('static', filename='images/smolensk/uha.webp') }}"
+                     alt="Уха по-гагарински"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dish-content">
+                <a href="https://eda.rambler.ru/recepty/supy/uha-po-gagarinski-139755">
+                    <h3 class="dish-title">Уха по-гагарински</h3>
+                </a>
+                <p class="dish-description">Рыбный суп, названный в честь Юрия Гагарина.</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+        <section class="section">
+    <h2 class="section-title">Язык региона</h2>
+    <div class="language-container">
+        <div class="language-content">
+            <p class="language-description">Языковая картина Смоленской области представляет собой уникальный сплав западных русских говоров, сформировавшихся на стыке русских, белорусских и отчасти украинских языковых традиций.</p>
+
+            <p class="language-description"><strong>Фонетические особенности:</strong> Для смоленских диалектов характерно ярко выраженное "аканье" (неразличение безударных [о] и [а]), мягкое фрикативное "г", а также сохранение древних звуковых сочетаний, утраченных в литературном языке.</p>
+
+            <p class="language-description"><strong>Лексическое богатство:</strong> В словарном составе сохранились архаичные слова и заимствования: "бульба" (картофель), "конат" (угол в избе), "свята" (праздник), "дзежка" (деревянная кадка), "шлях" (дорога).</p>
+
+            <p class="language-description"><strong>Современное состояние:</strong> Хотя диалект наиболее полно сохранился в сельской местности, многие его элементы вошли в повседневную речь горожан. Сегодня смоленские говоры активно изучаются лингвистами и являются ценным источником для исследования истории русского языка.</p>
+
+            <p class="language-description"><strong>Культурное наследие:</strong> Диалект нашел отражение в местном фольклоре — песнях, сказках, пословицах, а также в творчестве выдающихся писателей-земляков: Александра Твардовского, Михаила Исаковского, Николая Рыленкова, которые мастерски использовали народную речь в своих произведениях.</p>
+        </div>
+        <div class="language-links">
+            <a href="https://iling.spb.ru/dictionaries/srng/" class="language-link" target="_blank">Словарь диалектов</a>
+            <a href="https://folk.ru/Proverbs/index.php" class="language-link" target="_blank">Пословицы и поговорки</a>
+            <a href="https://folklore.ru/regions/smolensk.html" class="language-link" target="_blank">Фольклорные тексты</a>
+            <a href="https://ruscorpora.ru/new/corpora-oral.html" class="language-link" target="_blank">Аудиозаписи речи</a>
+        </div>
+    </div>
+</section>
+
+        <section class="section">
+    <h2 class="section-title">Музыка региона</h2>
+    <div class="music-container">
+        <div class="music-description">
+            <h3 class="music-title">Традиционная музыка Смоленщины</h3>
+            <p class="music-text">Музыкальная культура Смоленской области представляет собой уникальный сплав русских, белорусских и украинских традиций, сложившийся на перекрестке культурных влияний.</p>
+
+            <p class="music-text"><strong>Народные инструменты:</strong> Смоляне традиционно использовали жалейки, рожки, свирели, гусли, гармони и балалайки. Особое место занимала волынка-«дуда», которая почти исчезла в других регионах России, но сохранилась в Смоленской губернии.</p>
+
+            <p class="music-text"><strong>Песенные жанры:</strong> Богатство песенного фольклора включает лирические протяжные песни, весенние заклички, свадебные плачи, хороводные и плясовые напевы. Особенно известны смоленские «страдания» — эмоциональные лирические песни.</p>
+
+            <p class="music-text"><strong>Культурное значение:</strong> Музыка сопровождала все важные события жизни — от рождения до похорон, календарные праздники и обряды. Многие песни сохранили древние языческие мотивы, переплетенные с христианскими традициями.</p>
+        </div>
+        <div class="music-players">
+            <div class="player">
+                <div class="player-title">«Смоленский гусачок» (хороводная)</div>
+                <div class="player-controls">
+                    <button class="player-btn">▶</button>
+                    <div class="player-progress"></div>
+                    <div class="player-time">2:45</div>
+                </div>
+            </div>
+            <div class="player">
+                <div class="player-title">«Ах вы сени» (свадебная)</div>
+                <div class="player-controls">
+                    <button class="player-btn">▶</button>
+                    <div class="player-progress"></div>
+                    <div class="player-time">3:20</div>
+                </div>
+            </div>
+            <div class="player">
+                <div class="player-title">«Пошла млада за водой» (лирическая)</div>
+                <div class="player-controls">
+                    <button class="player-btn">▶</button>
+                    <div class="player-progress"></div>
+                    <div class="player-time">4:15</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="section">
+    <h2 class="section-title">Известные личности региона</h2>
+    <div class="persons-container">
+        <article class="person-card">
+            <div class="person-image">
+                <img src="{{ url_for('static', filename='images/smolensk/tvardovsky.jpg') }}"
+                     alt="Александр Твардовский"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="person-content">
+                <h3 class="person-name">Александр Твардовский</h3>
+                <p class="person-description">Советский поэт и писатель, главный редактор журнала «Новый мир». Автор поэмы «Василий Тёркин» — одной из самых знаковых литературных работ о Великой Отечественной войне. Лауреат Ленинской и трёх Сталинских премий. В годы его руководства «Новым миром» (1958—1970) журнал стал центром литературного либерализма и местом публикации произведений, критикующих сталинизм, включая повесть Александра Солженицына «Один день Ивана Денисовича».</p>
+            </div>
+        </article>
+
+        <!-- Юрий Гагарин -->
+        <article class="person-card">
+            <div class="person-image">
+                <img src="{{ url_for('static', filename='images/smolensk/gagarin.jpg') }}"
+                     alt="Юрий Гагарин"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="person-content">
+                <h3 class="person-name">Юрий Гагарин</h3>
+                <p class="person-description">Советский лётчик-космонавт, первый человек в мире, совершивший полёт в космическое пространство. Герой Советского Союза. Родился в деревне Клушино (ныне Гагаринский район Смоленской области). Его 108-минутный полёт на корабле «Восток-1» 12 апреля 1961 года стал историческим событием мирового масштаба. Именем Гагарина названы города, улицы, учебные заведения по всему миру.</p>
+            </div>
+        </article>
+
+        <!-- Михаил Глинка -->
+        <article class="person-card">
+            <div class="person-image">
+                <img src="{{ url_for('static', filename='images/smolensk/glinka.png') }}"
+                     alt="Михаил Глинка"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="person-content">
+                <h3 class="person-name">Михаил Глинка</h3>
+                <p class="person-description">Русский композитор, основоположник национальной композиторской школы, автор опер «Жизнь за царя» («Иван Сусанин») и «Руслан и Людмила», которые положили начало русской оперной классике. Его симфонические произведения, романсы и фортепианные пьесы оказали огромное влияние на развитие русской музыки. Глинка родился в селе Новоспасское Смоленской губернии, где сегодня находится музей-усадьба композитора.</p>
+            </div>
+        </article>
+    </div>
+</section>
+    </main>
+
+    <footer class="footer">
+        <a href="/" class="back-link">← Назад к выбору региона</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

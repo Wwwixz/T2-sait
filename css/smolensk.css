@@ -1,0 +1,951 @@
+/* Базовые стили и сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    color: #000000;
+    background: linear-gradient(135deg, #FFF8F8 0%, #FFEBEB 100%);
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(178, 34, 52, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.03) 0%, transparent 20%),
+        url('data:image/svg+xml;utf8,<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M60,10 C80,10 110,30 110,60 C110,90 80,110 60,110 C40,110 10,90 10,60 C10,30 40,10 60,10 Z" fill="none" stroke="%23B22234" stroke-width="0.5" opacity="0.1"/></svg>');
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Типография */
+h1, h2, h3, .section-title, .costume-title, .music-title, .person-name, .dish-title {
+    font-family: 'Amiri', serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #B22234;
+    position: relative;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    margin: 2rem auto;
+    border-radius: 3px;
+}
+
+h2 {
+    font-size: 2.8rem;
+    color: #B22234;
+    margin: 3.5rem 0 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #FFD700;
+    position: relative;
+}
+
+h2::before {
+    content: '❖';
+    color: #FFD700;
+    margin-right: 15px;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 2rem;
+    color: #B22234;
+    margin: 2.2rem 0 1.2rem;
+    font-weight: 700;
+    position: relative;
+    padding-left: 15px;
+}
+
+h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #FFD700;
+    border-radius: 2px;
+}
+
+p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #B22234;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Общие стили секций */
+.section {
+    margin: 2rem auto;
+    padding: 6rem 1.5rem;
+    max-width: 1200px;
+    position: relative;
+}
+
+.section-light {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    margin: 4rem 0;
+    box-shadow: 0 8px 30px rgba(178, 34, 52, 0.08);
+    border: 1px solid rgba(178, 34, 52, 0.1);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: #B22234;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #FFD700;
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(to right, #B22234, #8B0000);
+    color: #FFFFFF;
+    padding: 5rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #B22234, #FFD700, #B22234);
+}
+
+.region-title {
+    font-family: 'Amiri', serif;
+    font-size: 4rem;
+    margin: 0 0 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.region-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #B22234, #8B0000);
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 20px rgba(178, 34, 52, 0.3);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.region-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8B0000, #B22234);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+}
+
+.region-badge:hover::after {
+    opacity: 1;
+}
+
+/* Галерея */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border: 10px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(178, 34, 52, 0.12);
+    background: white;
+    margin-bottom: 2.5rem;
+}
+
+.gallery-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    text-align: center;
+    background: linear-gradient(135deg, #fff0f0 0%, #fff 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.gallery-slide.active {
+    opacity: 1;
+}
+
+.gallery-placeholder {
+    width: 90%;
+    height: 90%;
+    background-color: #FFD700;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B22234;
+    font-size: 1.2rem;
+    border: 2px solid #B22234;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid #FFD700;
+    color: #B22234;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.gallery-btn:hover {
+    background: #B22234;
+    color: white;
+    transform: translateY(-50%) scale(1.15);
+    border-color: #B22234;
+}
+
+.gallery-btn-prev {
+    left: 25px;
+}
+
+.gallery-btn-next {
+    right: 25px;
+}
+
+.gallery-counter {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background: rgba(178, 34, 52, 0.9);
+    color: #FFD700;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 2.5rem;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.dot.active {
+    background: #FFD700;
+    transform: scale(1.4);
+    border-color: #B22234;
+}
+
+.dot:hover {
+    background: #B22234;
+}
+
+/* Костюмы */
+.costume-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 18px;
+    padding: 2.2rem;
+    box-shadow: 0 8px 30px rgba(178, 34, 52, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.costume-container:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(178, 34, 52, 0.2);
+}
+
+.costume-image {
+    flex: 0 0 30%;
+    min-width: 250px;
+}
+
+.costume-image .image-placeholder {
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(135deg, #B22234, #8B0000);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFD700;
+    font-size: 4.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #000000;
+}
+
+.costume-image .image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.costume-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.costume-title {
+    font-size: 1.8rem;
+    color: #B22234;
+    margin-bottom: 1rem;
+}
+
+.costume-description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Блюда */
+.dishes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.dish-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(178, 34, 52, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    border: 2px solid #FFD700;
+}
+
+.dish-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(178, 34, 52, 0.2);
+    border-color: #B22234;
+}
+
+.dish-image {
+    width: 100%;
+    height: 200px;
+}
+
+.dish-image .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #FFD700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B22234;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #B22234;
+}
+
+.dish-content {
+    padding: 2rem;
+}
+
+.dish-title {
+    font-size: 1.8rem;
+    color: #B22234;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s;
+}
+
+.dish-title:hover {
+    color: #8B0000;
+}
+
+.dish-description {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.dish-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.2rem;
+    color: #B22234;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    padding: 8px 16px;
+    background: rgba(178, 34, 52, 0.05);
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dish-link:hover {
+    color: #B22234;
+    background: rgba(178, 34, 52, 0.1);
+    transform: translateX(5px);
+}
+
+/* Язык */
+.language-container {
+    background-color: white;
+    border-radius: 18px;
+    padding: 2.2rem;
+    box-shadow: 0 8px 30px rgba(178, 34, 52, 0.08);
+    border: 2px solid #B22234;
+}
+
+.language-content {
+    margin-bottom: 1.5rem;
+}
+
+.language-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.language-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.language-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #B22234, #8B0000);
+    color: #FFD700;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 6px 20px rgba(178, 34, 52, 0.3);
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.language-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8B0000, #B22234);
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: -1;
+}
+
+.language-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(178, 34, 52, 0.4);
+    color: #FFD700;
+    border-color: #FFD700;
+}
+
+.language-link:hover::before {
+    opacity: 1;
+}
+
+/* Музыка */
+.music-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 18px;
+    padding: 2.2rem;
+    box-shadow: 0 8px 30px rgba(178, 34, 52, 0.08);
+    border: 2px solid #B22234;
+}
+
+.music-description {
+    flex: 1;
+}
+
+.music-title {
+    font-size: 1.8rem;
+    color: #B22234;
+    margin-bottom: 1rem;
+}
+
+.music-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.music-players {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.player {
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 1.5rem;
+    border-left: 5px solid #B22234;
+    border: 2px solid #FFD700;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.player:hover {
+    transform: translateX(12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.player::before {
+    content: '✦';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 215, 0, 0.2);
+    font-size: 3rem;
+}
+
+.player-title {
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    color: #B22234;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.player-btn {
+    background: linear-gradient(135deg, #B22234, #8B0000);
+    color: #FFD700;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    border: 2px solid #FFD700;
+}
+
+.player-btn:hover {
+    background: #FFD700;
+    color: #B22234;
+    transform: scale(1.1);
+}
+
+.player-progress {
+    flex: 1;
+    height: 6px;
+    background-color: #ddd;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.player-progress::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, #B22234, #FFD700);
+}
+
+/* Известные личности */
+.persons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.person-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(178, 34, 52, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid #FFD700;
+}
+
+.person-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(178, 34, 52, 0.2);
+    border-color: #B22234;
+}
+
+.person-image {
+    width: 100%;
+    height: 250px;
+}
+
+.person-image .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #B22234, #8B0000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFD700;
+    font-size: 4.5rem;
+    border-bottom: 2px solid #FFD700;
+    position: relative;
+    overflow: hidden;
+}
+
+.person-image .image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
+    animation: shine 3s infinite;
+}
+
+.person-content {
+    padding: 2rem;
+}
+
+.person-name {
+    font-size: 1.8rem;
+    color: #B22234;
+    margin-bottom: 0.8rem;
+}
+
+.person-description {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Футер */
+.footer {
+    background-color: #000000;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 5px solid #FFD700;
+    border-radius: 20px 20px 0 0;
+    color: #FFFFFF;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #B22234, #8B0000);
+    color: #FFD700;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(178, 34, 52, 0.3);
+    border: 3px solid transparent;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.back-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8B0000, #B22234);
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: -1;
+}
+
+.back-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(178, 34, 52, 0.4);
+    color: #FFD700;
+    border-color: #FFD700;
+}
+
+.back-link:hover::before {
+    opacity: 1;
+}
+
+/* Декоративные элементы в татарском стиле (адаптированные) */
+.tatar-pattern {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.08;
+    z-index: -1;
+}
+
+.pattern-1 {
+    top: 15%;
+    left: 5%;
+    width: 180px;
+    height: 180px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg"><path d="M90,20 C120,20 160,50 160,90 C160,130 120,160 90,160 C60,160 20,130 20,90 C20,50 60,20 90,20 Z" fill="none" stroke="%23B22234" stroke-width="1.5"/><circle cx="90" cy="90" r="30" fill="none" stroke="%23FFD700" stroke-width="1"/></svg>');
+}
+
+.pattern-2 {
+    bottom: 10%;
+    right: 5%;
+    width: 220px;
+    height: 220px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="200" height="200" fill="none" stroke="%23B22234" stroke-width="1.5" rx="20"/><path d="M30,110 L190,110 M110,30 L110,190" stroke="%23FFD700" stroke-width="1"/></svg>');
+}
+
+.islamic-pattern {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 Q30,0 60,20 T120,20" stroke="%23B22234" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M0,20 Q30,40 60,20 T120,20" stroke="%23FFD700" stroke-width="1" fill="none" opacity="0.2"/></svg>');
+    background-repeat: repeat-x;
+    opacity: 0.1;
+}
+
+.pattern-top {
+    top: 0;
+}
+
+.pattern-bottom {
+    bottom: 0;
+    transform: rotate(180deg);
+}
+
+.footer-pattern {
+    height: 25px;
+    background: repeating-linear-gradient(
+        45deg,
+        #B22234,
+        #B22234 12px,
+        #FFD700 12px,
+        #FFD700 24px
+    );
+    margin: 3rem 0;
+    border-radius: 12px;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Прогресс-бар */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(90deg, #B22234, #FFD700);
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+/* Акцентные элементы */
+.accent-star {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin: 0 5px;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .section {
+        padding: 5rem 25px;
+    }
+
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.5rem; }
+    .gallery-container { height: 550px; }
+}
+
+@media (max-width: 992px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    .section { padding: 5rem 20px; }
+    .gallery-container { height: 500px; }
+    .costume-container {
+        flex-direction: column;
+    }
+    .costume-image {
+        min-width: 100%;
+    }
+    .music-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1rem;
+    }
+    .gallery-container {
+        height: 450px;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .lead { font-size: 1.6rem; }
+    .gallery-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    .language-links {
+        flex-direction: column;
+    }
+    .language-link {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .dish-card, .person-card {
+        min-width: 100%;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .lead { font-size: 1.3rem; }
+    .costume-image .image-placeholder {
+        height: 220px;
+        font-size: 3.5rem;
+    }
+}
